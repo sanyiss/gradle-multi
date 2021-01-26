@@ -57,7 +57,7 @@ public class SwaggerConfig {
      */
     private ApiInfo apiInfo(){
         //作者
-        Contact contact = new Contact("wt","","");
+        Contact contact = new Contact("multi","","");
         return new ApiInfoBuilder()
                 //页面标题
                 .title("接口总览")
