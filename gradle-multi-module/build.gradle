@@ -1,0 +1,103 @@
+plugins {
+    //lombok插件
+    id "io.freefair.lombok" version "5.3.0"
+    //使用Spring依赖管理
+    id "io.spring.dependency-management" version "1.0.9.RELEASE"
+    //springboot
+    id 'org.springframework.boot' version '2.4.2'
+}
+// ext 定义版本号
+ext {
+    //all project
+    jupiterApiVersion = '5.6.0'
+    // api model
+    mybatisVersion = '2.1.4'
+    swagger2Version = '2.9.2'
+    swagger2UiVersion = '1.8.9'
+    lombokVersion = '1.18.12'
+    // core project
+    springContextSupportVersion = '5.2.12.RELEASE'
+    // pojo project
+    swaggerAnnotationsVersion = '1.5.21'
+    // utils project
+    fastjsonVersion = '1.2.58'
+
+}
+
+//所有项目配置
+allprojects {
+    group 'com.wt.multi'
+    version '1.0-SNAPSHOT'
+}
+
+//子项目配置
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'io.freefair.lombok'
+
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        testImplementation "org.junit.jupiter:junit-jupiter-api:${jupiterApiVersion}"
+        testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine"
+    }
+}
+
+//api 模块配置
+project(':multi-api') {
+    apply plugin: "org.springframework.boot"
+    apply plugin: "war"
+    dependencies {
+        implementation project(':multi-core')
+        implementation project(':multi-pojo')
+        implementation "org.mybatis.spring.boot:mybatis-spring-boot-starter:${mybatisVersion}"
+        implementation "org.springframework.boot:spring-boot-starter-web"
+        implementation "org.springframework.boot:spring-boot-starter-jdbc"
+        implementation "io.springfox:springfox-swagger2:${swagger2Version}"
+        implementation "com.github.xiaoymin:swagger-bootstrap-ui:${swagger2UiVersion}"
+        implementation "org.projectlombok:lombok:${lombokVersion}"
+        runtimeOnly "mysql:mysql-connector-java"
+        providedRuntime "org.springframework.boot:spring-boot-starter-tomcat"
+    }
+    jar {
+        manifest {
+            attributes 'Built-By': System.getProperty('user.name'),
+                    'Build-Jdk': System.getProperty('java.version')
+        }
+    }
+    war {
+        manifest {
+            attributes 'Built-By': System.getProperty('user.name'),
+                    'Build-Jdk': System.getProperty('java.version')
+        }
+    }
+}
+
+//core 模块配置
+project(':multi-core') {
+    dependencies {
+        implementation "org.springframework:spring-context-support:${springContextSupportVersion}"
+        implementation project(':multi-pojo')
+        implementation project(':multi-utils')
+    }
+}
+
+//pojo 模块配置
+project(':multi-pojo') {
+    dependencies {
+        implementation "io.swagger:swagger-annotations:${swaggerAnnotationsVersion}"
+    }
+}
+
+//工具 模块配置
+project(':multi-utils') {
+    dependencies {
+        implementation "com.alibaba:fastjson:${fastjsonVersion}"
+    }
+}

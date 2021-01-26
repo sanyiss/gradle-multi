@@ -1,0 +1,6 @@
+rootProject.name = 'gradle-multi-module'
+include 'multi-api'
+include 'multi-core'
+include 'multi-pojo'
+include 'multi-utils'
+

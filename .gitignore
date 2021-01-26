@@ -1,0 +1,6 @@
+/gradle-multi-module/.idea
+/gradle-multi-module/.gradle
+/gradle-multi-module/multi-api/build
+/gradle-multi-module/multi-core/build
+/gradle-multi-module/multi-pojo/build
+/gradle-multi-module/multi-utils/build
