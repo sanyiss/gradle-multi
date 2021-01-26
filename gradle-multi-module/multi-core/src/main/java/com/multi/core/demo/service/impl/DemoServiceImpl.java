@@ -1,8 +1,8 @@
-package com.wt.multi.core.demo.service.impl;
+package com.multi.core.demo.service.impl;
 
-import com.wt.multi.pojo.demo.Demo;
-import com.wt.multi.core.demo.dao.DemoDao;
-import com.wt.multi.core.demo.service.DemoService;
+import com.multi.pojo.demo.Demo;
+import com.multi.core.demo.dao.DemoDao;
+import com.multi.core.demo.service.DemoService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

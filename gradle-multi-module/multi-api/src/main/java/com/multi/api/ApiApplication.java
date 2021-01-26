@@ -1,4 +1,4 @@
-package com.wt.multi.api;
+package com.multi.api;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -15,9 +15,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @ServletComponentScan
 @EnableTransactionManagement(proxyTargetClass = true)
 //扫描mybatis 接口
-@MapperScan(basePackages = {"com.wt.multi.core.*.dao"})
+@MapperScan(basePackages = {"com.multi.core.*.dao"})
 //扫描 springboot 注解
-@ComponentScan(basePackages = "com.wt.multi.*")
+@ComponentScan(basePackages = "com.multi.*")
 @EnableCaching
 @EnableScheduling
 public class ApiApplication {

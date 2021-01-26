@@ -1,7 +1,7 @@
-package com.wt.multi.core.demo.dao;
+package com.multi.core.demo.dao;
 
 
-import com.wt.multi.pojo.demo.Demo;
+import com.multi.pojo.demo.Demo;
 
 import java.util.List;
 

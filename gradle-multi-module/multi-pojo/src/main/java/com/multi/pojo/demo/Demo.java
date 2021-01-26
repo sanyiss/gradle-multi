@@ -1,4 +1,4 @@
-package com.wt.multi.pojo.demo;
+package com.multi.pojo.demo;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

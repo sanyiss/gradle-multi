@@ -1,4 +1,4 @@
-package com.wt.multi.api.config;
+package com.multi.api.config;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
@@ -32,7 +32,7 @@ public class SwaggerConfig {
                 .apiInfo(apiInfo())
                 .groupName("案例模块接口")
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.wt.multi.api.demo"))
+                .apis(RequestHandlerSelectors.basePackage("com.multi.api.demo"))
                 .paths(PathSelectors.any())
                 .build().globalOperationParameters(getPars());
     }

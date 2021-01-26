@@ -1,7 +1,7 @@
-package com.wt.multi.api.demo;
+package com.multi.api.demo;
 
-import com.wt.multi.pojo.demo.Demo;
-import com.wt.multi.core.demo.service.DemoService;
+import com.multi.pojo.demo.Demo;
+import com.multi.core.demo.service.DemoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.PostMapping;

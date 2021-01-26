@@ -1,8 +1,8 @@
-package com.wt.multi.core.demo.service;
+package com.multi.core.demo.service;
 
 
 
-import com.wt.multi.pojo.demo.Demo;
+import com.multi.pojo.demo.Demo;
 
 import java.util.List;
 

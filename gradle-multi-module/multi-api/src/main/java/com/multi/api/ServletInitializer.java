@@ -1,4 +1,4 @@
-package com.wt.multi.api;
+package com.multi.api;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.ServletComponentScan;
