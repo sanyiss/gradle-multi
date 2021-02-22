@@ -9,18 +9,18 @@ plugins {
 // ext 定义版本号
 ext {
     //all project
-    jupiterApiVersion = '5.6.0'
+    jupiter_api_version = '5.6.0'
     // api model
-    mybatisVersion = '2.1.4'
-    swagger2Version = '2.9.2'
-    swagger2UiVersion = '1.8.9'
-    lombokVersion = '1.18.12'
+    mybatis_version = '2.1.4'
+    swagger2_version = '2.9.2'
+    swagger2_ui_version = '1.8.9'
+    lombok_version = '1.18.12'
     // core project
-    springContextSupportVersion = '5.2.12.RELEASE'
+    spring_context_support_version = '5.2.12.RELEASE'
     // pojo project
-    swaggerAnnotationsVersion = '1.5.21'
+    swagger_annotations_version = '1.5.21'
     // utils project
-    fastjsonVersion = '1.2.58'
+    fastjson_version = '1.2.58'
 
 }
 
@@ -44,7 +44,7 @@ subprojects {
     }
 
     dependencies {
-        testImplementation "org.junit.jupiter:junit-jupiter-api:${jupiterApiVersion}"
+        testImplementation "org.junit.jupiter:junit-jupiter-api:${jupiter_api_version}"
         testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine"
     }
 }
@@ -56,12 +56,12 @@ project(':multi-api') {
     dependencies {
         implementation project(':multi-core')
         implementation project(':multi-pojo')
-        implementation "org.mybatis.spring.boot:mybatis-spring-boot-starter:${mybatisVersion}"
+        implementation "org.mybatis.spring.boot:mybatis-spring-boot-starter:${mybatis_version}"
         implementation "org.springframework.boot:spring-boot-starter-web"
         implementation "org.springframework.boot:spring-boot-starter-jdbc"
-        implementation "io.springfox:springfox-swagger2:${swagger2Version}"
-        implementation "com.github.xiaoymin:swagger-bootstrap-ui:${swagger2UiVersion}"
-        implementation "org.projectlombok:lombok:${lombokVersion}"
+        implementation "io.springfox:springfox-swagger2:${swagger2_version}"
+        implementation "com.github.xiaoymin:swagger-bootstrap-ui:${swagger2_ui_version}"
+        implementation "org.projectlombok:lombok:${lombok_version}"
         runtimeOnly "mysql:mysql-connector-java"
         providedRuntime "org.springframework.boot:spring-boot-starter-tomcat"
     }
@@ -82,7 +82,7 @@ project(':multi-api') {
 //core 模块配置
 project(':multi-core') {
     dependencies {
-        implementation "org.springframework:spring-context-support:${springContextSupportVersion}"
+        implementation "org.springframework:spring-context-support:${spring_context_support_version}"
         implementation project(':multi-pojo')
         implementation project(':multi-utils')
     }
@@ -91,13 +91,13 @@ project(':multi-core') {
 //pojo 模块配置
 project(':multi-pojo') {
     dependencies {
-        implementation "io.swagger:swagger-annotations:${swaggerAnnotationsVersion}"
+        implementation "io.swagger:swagger-annotations:${swagger_annotations_version}"
     }
 }
 
 //工具 模块配置
 project(':multi-utils') {
     dependencies {
-        implementation "com.alibaba:fastjson:${fastjsonVersion}"
+        implementation "com.alibaba:fastjson:${fastjson_version}"
     }
 }
